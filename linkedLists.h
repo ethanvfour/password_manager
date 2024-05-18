@@ -66,12 +66,24 @@ class LinkedListPasswords
     websiteUsernamePassword * head;
     int count;
 
-    void sortList();
 
+
+    void sortList();
 public:
     LinkedListPasswords();
 
-    void addToList();
+
+    /*
+    Adds information to list
+    Will call sortList after
+    */
+    void addToList(string, string, string);
+
+
+    /*
+    Removes element at specified index
+    */
+    void removeFromList(int index);
 
     ~LinkedListPasswords();
 

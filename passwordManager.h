@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include "linkedLists.h"
 
 
 
@@ -13,9 +14,10 @@ class passwordManager
 {
     ifstream reader;
     ofstream outputter;
+    LinkedListPasswords list;
 public:
     passwordManager();
-    
+
 
     ~passwordManager();
     
