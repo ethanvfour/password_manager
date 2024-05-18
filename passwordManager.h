@@ -13,6 +13,11 @@ class passwordManager
 {
     ifstream reader;
     ofstream outputter;
+public:
+    passwordManager();
+    
+
+    ~passwordManager();
     
 };
 
