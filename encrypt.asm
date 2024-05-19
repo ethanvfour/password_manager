@@ -55,8 +55,6 @@ decryptString:
             jb goingThroughStringAgain
 
     pop r12
-        
-
     pop rbx
 ret
 

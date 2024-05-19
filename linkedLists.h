@@ -99,8 +99,16 @@ public:
     */
     void removeFromList(int index);
 
+
+    /*
+    Gets count
+    */
     int getCount();
 
+
+    /*
+    Removes all linked list
+    */
     ~LinkedListPasswords();
 
 };
