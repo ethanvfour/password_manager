@@ -14,6 +14,7 @@ This class will hold three things
 class websiteUsernamePassword
 {
     string website, username, password;
+    websiteUsernamePassword * next;
 public:
     /*
         Default constructor
@@ -23,8 +24,18 @@ public:
     /*
         Constructor with parameters
     */
-    websiteUsernamePassword(string website, string username, string password);
+    websiteUsernamePassword(string, string, string);
 
+    /*
+    Sets next node for this one
+    */
+    void setNext(websiteUsernamePassword * nextNode);
+    
+
+    /*
+    Hopefully returns next node
+    */
+    websiteUsernamePassword* getNext();
 
     /*
         Getter for the website
@@ -44,17 +55,17 @@ public:
     /*
         Setter for the website
     */
-    void setWebsite();
+    void setWebsite(string);
 
     /*
         Setter for the website
     */
-    void setUsername();
+    void setUsername(string);
 
     /*
         Setter for the website
     */
-    void setPassword();
+    void setPassword(string);
 };
 
 /*
@@ -67,15 +78,14 @@ class LinkedListPasswords
     int count;
 
 
-
-    void sortList();
+    
 public:
     LinkedListPasswords();
 
 
     /*
     Adds information to list
-    Will call sortList after
+    Will add it alphebetically hopefully
     */
     void addToList(string, string, string);
 
