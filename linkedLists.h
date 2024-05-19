@@ -92,8 +92,14 @@ public:
 
     /*
     Removes element at specified index
+    In main, main should call get count to see if index
+    is allowed
+    Assume that there is an element
+    Index will be standard indexing, meaning first element, index == 0
     */
     void removeFromList(int index);
+
+    int getCount();
 
     ~LinkedListPasswords();
 

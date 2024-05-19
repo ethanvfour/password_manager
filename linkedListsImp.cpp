@@ -88,6 +88,8 @@ void LinkedListPasswords::addToList(string website, string username, string pass
             - Adding to end
             - Adding in middle
     */
+    count++;
+
     if(head == nullptr)
     {
         head = new websiteUsernamePassword(website,username, password);
@@ -129,5 +131,48 @@ void LinkedListPasswords::addToList(string website, string username, string pass
             }
         }
         
+    }
+}
+
+
+void LinkedListPasswords::removeFromList(int index)
+{
+    if(index == 0)
+    {
+        websiteUsernamePassword * temp = head;
+        head = head->getNext();
+        delete temp;
+        count--;
+    }
+    else
+    {
+        int counter = 0;
+        websiteUsernamePassword * goer = head;
+        websiteUsernamePassword * prev = nullptr;
+        while(counter != index)
+        {
+            prev = goer;
+            goer = goer->getNext();
+            counter++;
+        }
+        prev->setNext(goer->getNext());
+        delete goer;
+        goer = nullptr;
+        count--;
+    }
+}
+
+int LinkedListPasswords::getCount()
+{
+    return count;
+}
+
+LinkedListPasswords::~LinkedListPasswords()
+{
+    while(head != nullptr)
+    {
+        websiteUsernamePassword * goer = head->getNext()->getNext();
+        delete head;
+        head = goer;
     }
 }
