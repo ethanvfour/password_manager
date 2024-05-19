@@ -3,6 +3,7 @@ section .text
 
 
 ; rdi will be the string addy
+; rsi is int length
 
 ; void function, string will be passed by ref
 
@@ -17,6 +18,12 @@ encryptString:
     
         mov r12, 0 ; counter
         goingThroughString:
+            mov bl, byte[rdi + r12]
+            ror bl, 4
+            mov byte[rdi + r12], bl 
+            inc r12
+            cmp r12, rsi
+            jb goingThroughString
 
     pop r12
     pop rbx
@@ -25,6 +32,7 @@ ret
 
 
 ; rdi will be the string addy
+; rsi is int length
 
 ; void function, string will be passed by ref
 
@@ -35,7 +43,18 @@ ret
 global decryptString
 decryptString:
     push rbx
+    push r12
+    
+        mov r12, 0 ; counter
+        goingThroughStringAgain:
+            mov bl, byte[rdi + r12]
+            rol bl, 4
+            mov byte[rdi + r12], bl 
+            inc r12
+            cmp r12, rsi
+            jb goingThroughStringAgain
 
+    pop r12
         
 
     pop rbx
