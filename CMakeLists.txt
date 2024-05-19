@@ -10,10 +10,16 @@ add_library(
 )
 # this library is for the password header and implication
 
+add_library(
+    linkedListsHeadersAndImps
+    linkedListsImp.cpp 
+    linkedLists.h
+)
+# this library is for the linked lists header and implication
 
 add_executable(passwordManager main.cpp encrypt.asm)
 #adding it on
 
-
 target_link_libraries(passwordManager PRIVATE passwordHeadersAndImps)
-#adding library
+target_link_libraries(passwordManager PRIVATE linkedListsHeadersAndImps)
+#adding libraries
