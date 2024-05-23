@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 #include "linkedLists.h"
 
 /*
@@ -38,8 +39,21 @@ public:
     */
     passwordManager();
 
+
+    /*
+    Adds the website, username, password to the list
+    */
     void addPassword(string, string, string);
 
+
+    /*
+    Couts all data
+    */
+    void viewPasswords();
+
+    /*
+    Opens a pass.txt then puts a encrypted string into the txt file
+    */
     ~passwordManager();
 };
 
