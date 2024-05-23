@@ -14,7 +14,8 @@ This class will hold three things
 class websiteUsernamePassword
 {
     string website, username, password;
-    websiteUsernamePassword * next;
+    websiteUsernamePassword *next;
+
 public:
     /*
         Default constructor
@@ -29,13 +30,12 @@ public:
     /*
     Sets next node for this one
     */
-    void setNext(websiteUsernamePassword * nextNode);
-    
+    void setNext(websiteUsernamePassword *nextNode);
 
     /*
     Hopefully returns next node
     */
-    websiteUsernamePassword* getNext();
+    websiteUsernamePassword *getNext();
 
     /*
         Getter for the website
@@ -74,21 +74,17 @@ Will always be sorted
 */
 class LinkedListPasswords
 {
-    websiteUsernamePassword * head;
+    websiteUsernamePassword *head;
     int count;
 
-
-    
 public:
     LinkedListPasswords();
-
 
     /*
     Adds information to list
     Will add it alphebetically hopefully
     */
     void addToList(string, string, string);
-
 
     /*
     Removes element at specified index
@@ -99,19 +95,15 @@ public:
     */
     void removeFromList(int index);
 
-
     /*
     Gets count
     */
     int getCount();
 
-
     /*
     Removes all linked list
     */
     ~LinkedListPasswords();
-
 };
-
 
 #endif

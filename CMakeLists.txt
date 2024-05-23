@@ -3,6 +3,10 @@ project(passwordManager) # naming project
 
 enable_language(ASM_NASM) # enabling asm for the use of ror and rol
 
+# Adding directories for the include files
+include_directories(${CMAKE_SOURCE_DIR})
+
+
 add_library(
     passwordHeadersAndImps
     passwordManager.h
@@ -12,8 +16,8 @@ add_library(
 
 add_library(
     linkedListsHeadersAndImps
-    linkedListsImp.cpp 
     linkedLists.h
+    linkedListsImp.cpp
 )
 # this library is for the linked lists header and implication
 

@@ -15,7 +15,7 @@ global encryptString
 encryptString:
     push rbx
     push r12
-    
+        
         mov r12, 0 ; counter
         goingThroughString:
             mov bl, byte[rdi + r12]
@@ -24,7 +24,7 @@ encryptString:
             inc r12
             cmp r12, rsi
             jb goingThroughString
-
+        
     pop r12
     pop rbx
 ret
