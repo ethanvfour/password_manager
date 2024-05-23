@@ -2,6 +2,8 @@ section .text
 
 
 
+;FOLLOWING LCC
+
 ; rdi will be the string addy
 ; rsi is int length
 

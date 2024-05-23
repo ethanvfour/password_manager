@@ -3,7 +3,7 @@ project(passwordManager) # naming project
 
 enable_language(ASM_NASM) # enabling asm for the use of ror and rol
 
-# Adding directories for the include files
+# adding directories for the include files
 include_directories(${CMAKE_SOURCE_DIR})
 
 

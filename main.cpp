@@ -4,13 +4,8 @@
 
 using namespace std;
 
-
-
-
-
 int main()
 {
-    coolOutput("Hello there!");
-    
-    
+    passwordManager pm;
+    pm.addPassword("hub.com", "The Gooner", "Gooner123");
 }

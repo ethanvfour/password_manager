@@ -158,11 +158,31 @@ int LinkedListPasswords::getCount()
     return count;
 }
 
+websiteUsernamePassword* LinkedListPasswords::getNode(int index)
+{
+    if(count == 0)
+    {
+        return nullptr;
+    }
+
+    websiteUsernamePassword * returner = head;
+    for(int i = 0; i < count; i++)
+    {
+        if(i == index)
+        {
+            return returner;
+        }
+        returner = returner->getNext();
+    }
+
+    return nullptr;//should never reach this point
+}
+
 LinkedListPasswords::~LinkedListPasswords()
 {
     while (head != nullptr)
     {
-        websiteUsernamePassword *goer = head->getNext()->getNext();
+        websiteUsernamePassword *goer = head->getNext();
         delete head;
         head = goer;
     }
