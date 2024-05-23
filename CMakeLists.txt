@@ -21,9 +21,18 @@ add_library(
 )
 # this library is for the linked lists header and implication
 
+add_library(
+    coolFunctionsWhoa
+    coolFunctions.h 
+    coolFunctionsImp.cpp 
+)
+# just some cool functions
+
 add_executable(passwordManager main.cpp encrypt.asm)
 #adding it on
 
 target_link_libraries(passwordManager PRIVATE passwordHeadersAndImps)
 target_link_libraries(passwordManager PRIVATE linkedListsHeadersAndImps)
+target_link_libraries(passwordManager PRIVATE coolFunctionsWhoa)
+
 #adding libraries

@@ -2,10 +2,7 @@
 
 
 
-/*
-A line should be like this, including the ""
-"<website>" "<username>" "<password>"
-*/
+
 passwordManager::passwordManager()
 {
     reader.open("pass.txt");
@@ -19,6 +16,13 @@ passwordManager::passwordManager()
             
         }
     }
+}
+
+
+
+void passwordManager::addPassword(string website, string username, string password)
+{
+    list.addToList(website, username, password);
 }
 
 passwordManager::~passwordManager()

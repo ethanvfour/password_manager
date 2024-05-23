@@ -31,6 +31,10 @@ public:
     Will open pass.txt
     If not found, assumes this is the first time it has been run
     else, decrypts data, and adds it to list
+
+
+    A line should be like this, including the ""
+    "<website>" "<username>" "<password>"
     */
     passwordManager();
 
