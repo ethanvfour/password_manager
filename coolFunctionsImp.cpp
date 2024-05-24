@@ -34,3 +34,8 @@ void oooScaryOutput(string wah)
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
+
+void waitThisLong(int x)
+{
+    std::this_thread::sleep_for(std::chrono::seconds(x));
+}

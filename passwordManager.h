@@ -47,9 +47,19 @@ public:
 
 
     /*
+    Removes an element, the index given will follow standard indexing
+    */
+    void removePassword(int index);
+
+    /*
     Couts all data
     */
     void viewPasswords();
+
+    /*
+    Returns how many passwords there are
+    */
+    int getCount();
 
     /*
     Opens a pass.txt then puts a encrypted string into the txt file

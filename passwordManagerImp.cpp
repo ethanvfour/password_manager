@@ -37,6 +37,12 @@ void passwordManager::addPassword(string website, string username, string passwo
     list.addToList(website, username, password);
 }
 
+
+void passwordManager::removePassword(int index)
+{
+    list.removeFromList(index);
+}
+
 void passwordManager::viewPasswords()
 {
     if (list.getCount() != 0)
@@ -66,8 +72,19 @@ void passwordManager::viewPasswords()
     }
     else
     {
+        cout<<left;
+        cout<<setfill('*')<<setw(100)<<"";
+        cout<<setfill(' ');
         cout << "No passwords given!\n";
+        cout<<setfill('*')<<setw(100)<<"";
+        cout<<setfill(' ');
+        cout<<endl;
     }
+}
+
+int passwordManager::getCount()
+{
+    return list.getCount();
 }
 
 passwordManager::~passwordManager()

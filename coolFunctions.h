@@ -29,4 +29,9 @@ Scary output ooo, also clears screen
 */
 void oooScaryOutput(string wah);
 
+/*
+Pauses this many seconds
+*/
+void waitThisLong(int x);
+
 #endif
