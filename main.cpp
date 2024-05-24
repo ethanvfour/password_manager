@@ -63,9 +63,10 @@ int main()
                 {
                     coolOutput("What is the username for this password?\n**");
                     getline(cin, username);
+                    coolOutput("");
                     coolOutputNoClear("Is this correct?\n");
                     coolOutputNoClear(username);
-                    coolOutputNoClear(" Y/N");
+                    coolOutputNoClear(" Y/N\n**");
                     getline(cin, uAns);
                     if(uAns[0] == 'Y' || uAns[0] == 'y')
                     {
@@ -78,9 +79,10 @@ int main()
                 {
                     coolOutput("Finally, what is the password?\n**");
                     getline(cin, password);
+                    coolOutput("");
                     coolOutputNoClear("Is this correct?\n");
                     coolOutputNoClear(password);
-                    coolOutputNoClear(" Y/N");
+                    coolOutputNoClear(" Y/N\n**");
                     getline(cin, uAns);
                     if(uAns[0] == 'Y' || uAns[0] == 'y')
                     {
@@ -94,26 +96,40 @@ int main()
             else if(userChoice == 3)
             {
                 int index = -1000;
-
+                coolOutput("");
                 bool goodIndex = false;
                 while(!goodIndex)
                 {
                     pm.viewPasswords();
                     coolOutputNoClear("Which index do you want to delete? If pressed by mistake, enter -1\n**");
                     cin >> index;
-                    if(cin.fail() || ((index < 1) || (index > pm.getCount())))
+                    if(cin.fail())
                     {
+                        
                         cin.clear();
                         cin.ignore('\n', 1000);
-                        coolOutput("Not good input\n");
-                        waitThisLong(1);
+                        
+                    }
+                    else if(index < 1 || index > pm.getCount())
+                    {
+                        if(index == -1)
+                        {
+                            goodIndex = true;
+                        }
+                        else
+                        {
+                            coolOutput("Not good input\n");
+                            waitThisLong(1);
+                        }
                     }
                     else
                     {
+                        goodIndex = true;
                         index--; //needed for standard indexing 
                         pm.removePassword(index);
                     }
                 }
+                coolOutput("");
             }
             else if(userChoice == 4)
             {
