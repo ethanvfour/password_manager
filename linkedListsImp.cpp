@@ -183,6 +183,9 @@ LinkedListPasswords::~LinkedListPasswords()
     while (head != nullptr)
     {
         websiteUsernamePassword *goer = head->getNext();
+        head->setPassword("EMPTY");
+        head->setUsername("EMPTY");
+        head->setWebsite("EMPTY");
         delete head;
         head = goer;
     }

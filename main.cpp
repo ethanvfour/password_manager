@@ -134,7 +134,7 @@ int main()
             else if(userChoice == 4)
             {
                 endOfUse = true;
-                coolOutput("Saving password to database...");
+                coolOutput("Saving passwords to database...");
                 waitThisLong(2);
                 cout << endl;
             }
