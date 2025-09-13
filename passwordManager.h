@@ -10,13 +10,13 @@
 This function will take in a string and use the ror implication in assembly to encrypt each byte
 String is passed by ref
 */
-extern "C" void encryptString(char * str, int length);
+extern "C" void encryptString(char *str, int length);
 
 /*
 This function will take in a string and use the rol implication in assembly to decrypt each byte
 String is passed by ref
 */
-extern "C" void decryptString(char * str, int length);
+extern "C" void decryptString(char *str, int length);
 
 /*
 Will be in charge of opening a text file and outputting the text file
@@ -39,12 +39,10 @@ public:
     */
     passwordManager();
 
-
     /*
     Adds the website, username, password to the list
     */
     void addPassword(string, string, string);
-
 
     /*
     Removes an element, the index given will follow standard indexing

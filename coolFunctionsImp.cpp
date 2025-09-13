@@ -15,7 +15,6 @@ void coolOutput(string wah)
     }
 }
 
-
 void coolOutputNoClear(string wah)
 {
     for (int i = 0; i < wah.length(); i++)
@@ -28,9 +27,9 @@ void coolOutputNoClear(string wah)
 void oooScaryOutput(string wah)
 {
     cout << "\033[2J\033[1;1H" << flush;
-    for(int i = 0; i< wah.length();i++)
+    for (int i = 0; i < wah.length(); i++)
     {
-        cout<<wah[i]<<flush;
+        cout << wah[i] << flush;
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }

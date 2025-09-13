@@ -37,7 +37,6 @@ void passwordManager::addPassword(string website, string username, string passwo
     list.addToList(website, username, password);
 }
 
-
 void passwordManager::removePassword(int index)
 {
     list.removeFromList(index);
@@ -47,38 +46,35 @@ void passwordManager::viewPasswords()
 {
     if (list.getCount() != 0)
     {
-        cout<<left;
-        cout<<setfill('*')<<setw(100)<<"";
-        cout<<setfill(' ');
+        cout << left;
+        cout << setfill('*') << setw(120) << "";
+        cout << setfill(' ');
 
-        cout<<endl;
+        cout << endl;
         for (int i = 0; i < list.getCount(); i++)
         {
             websiteUsernamePassword *goer = list.getNode(i);
 
-            
-            cout << to_string(i + 1) <<". Website: "
-                 << setw(20)<< goer->getWebsite()
-                 <<" Username: "
-                 << setw(20) << goer->getUsername()
-                 <<" Password: "
-                 <<setw(20)<< goer->getPassword()<<endl;
-                
-            
+            cout << to_string(i + 1) << ". Website: "
+                 << setw(30) << goer->getWebsite()
+                 << " Username: "
+                 << setw(30) << goer->getUsername()
+                 << " Password: "
+                 << setw(30) << goer->getPassword() << endl;
         }
-        cout<<setfill('*')<<setw(100)<<"";
-        cout<<setfill(' ');
-        cout<<endl;
+        cout << setfill('*') << setw(120) << "";
+        cout << setfill(' ');
+        cout << endl;
     }
     else
     {
-        cout<<left;
-        cout<<setfill('*')<<setw(100)<<"";
-        cout<<setfill(' ');
+        cout << left;
+        cout << setfill('*') << setw(100) << "";
+        cout << setfill(' ');
         cout << "No passwords given!\n";
-        cout<<setfill('*')<<setw(100)<<"";
-        cout<<setfill(' ');
-        cout<<endl;
+        cout << setfill('*') << setw(100) << "";
+        cout << setfill(' ');
+        cout << endl;
     }
 }
 

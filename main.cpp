@@ -28,15 +28,15 @@ int main()
         }
         else
         {
-            
-            if(userChoice == 1)
+
+            if (userChoice == 1)
             {
                 /* code */
                 coolOutput("");
                 pm.viewPasswords();
                 waitThisLong(4);
             }
-            else if(userChoice == 2)
+            else if (userChoice == 2)
             {
                 string website = "", username = "", password = "", uAns = "";
                 cin.clear();
@@ -52,14 +52,14 @@ int main()
                     coolOutputNoClear(website);
                     coolOutputNoClear(" Y/N\n**");
                     getline(cin, uAns);
-                    if(uAns[0] == 'Y' || uAns[0] == 'y')
+                    if (uAns[0] == 'Y' || uAns[0] == 'y')
                     {
                         websiteGood = true;
                     }
                 }
 
                 bool usernameGood = false;
-                while(!usernameGood)
+                while (!usernameGood)
                 {
                     coolOutput("What is the username for this password?\n**");
                     getline(cin, username);
@@ -68,14 +68,14 @@ int main()
                     coolOutputNoClear(username);
                     coolOutputNoClear(" Y/N\n**");
                     getline(cin, uAns);
-                    if(uAns[0] == 'Y' || uAns[0] == 'y')
+                    if (uAns[0] == 'Y' || uAns[0] == 'y')
                     {
                         usernameGood = true;
                     }
                 }
 
                 bool passwordGood = false;
-                while(!passwordGood)
+                while (!passwordGood)
                 {
                     coolOutput("Finally, what is the password?\n**");
                     getline(cin, password);
@@ -84,7 +84,7 @@ int main()
                     coolOutputNoClear(password);
                     coolOutputNoClear(" Y/N\n**");
                     getline(cin, uAns);
-                    if(uAns[0] == 'Y' || uAns[0] == 'y')
+                    if (uAns[0] == 'Y' || uAns[0] == 'y')
                     {
                         passwordGood = true;
                     }
@@ -93,45 +93,52 @@ int main()
                 pm.addPassword(website, username, password);
                 coolOutput("");
             }
-            else if(userChoice == 3)
+            else if (userChoice == 3)
             {
-                int index = -1000;
-                coolOutput("");
-                bool goodIndex = false;
-                while(!goodIndex)
+                if(pm.getCount() != 0)
                 {
-                    pm.viewPasswords();
-                    coolOutputNoClear("Which index do you want to delete? If pressed by mistake, enter -1\n**");
-                    cin >> index;
-                    if(cin.fail())
+                    int index = -1000;
+                    coolOutput("");
+                    bool goodIndex = false;
+                    while (!goodIndex)
                     {
-                        
-                        cin.clear();
-                        cin.ignore('\n', 1000);
-                        
-                    }
-                    else if(index < 1 || index > pm.getCount())
-                    {
-                        if(index == -1)
+                        pm.viewPasswords();
+                        coolOutputNoClear("Which index do you want to delete? If pressed by mistake, enter -1\n**");
+                        cin >> index;
+                        if (cin.fail())
                         {
-                            goodIndex = true;
+
+                            cin.clear();
+                            cin.ignore('\n', 1000);
+                        }
+                        else if (index < 1 || index > pm.getCount())
+                        {
+                            if (index == -1)
+                            {
+                                goodIndex = true;
+                            }
+                            else
+                            {
+                                coolOutput("Not good input\n");
+                                waitThisLong(1);
+                            }
                         }
                         else
                         {
-                            coolOutput("Not good input\n");
-                            waitThisLong(1);
+                            goodIndex = true;
+                            index--; // needed for standard indexing
+                            pm.removePassword(index);
                         }
                     }
-                    else
-                    {
-                        goodIndex = true;
-                        index--; //needed for standard indexing 
-                        pm.removePassword(index);
-                    }
+                }
+                else
+                {
+                    coolOutput("There is nothing to delete!\n");
+                    waitThisLong(1);
                 }
                 coolOutput("");
             }
-            else if(userChoice == 4)
+            else if (userChoice == 4)
             {
                 endOfUse = true;
                 coolOutput("Saving passwords to database...");
@@ -143,7 +150,6 @@ int main()
                 coolOutput("ERROR: GIVING OPTIONS AGAIN!\n");
                 waitThisLong(1);
             }
-            
         }
     }
 }

@@ -100,11 +100,10 @@ public:
     */
     int getCount();
 
-
     /*
     Returns a node specified by index
     */
-    websiteUsernamePassword* getNode(int index);
+    websiteUsernamePassword *getNode(int index);
 
     /*
     Removes all linked list

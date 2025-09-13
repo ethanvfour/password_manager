@@ -7,12 +7,10 @@
 
 using namespace std;
 
-
 /*
 A no operation
 */
 void nop();
-
 
 /*
 Clears screen, also does some cool output
